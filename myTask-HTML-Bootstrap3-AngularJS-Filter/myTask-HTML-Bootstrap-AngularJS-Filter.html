@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="Tasks">
+<head>
+    <title>myTask</title>
+    <meta charset="utf-8" />
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="myApp.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <header class="container-fluid myHeader" >
+        <h1>Task</h1>
+    </header>
+
+    <div class="container-fluid">   
+        
+       
+         <div ng-controller="taskListController">
+
+            <div class="row secondRow">
+
+                <div class="col-sm-6">
+                    <button class="btn btn-primary btn-lg" ng-click="addTask()" ng-disabled="!enableAdd()">
+                        <!--ng-show will show butten when false, and hide when true-->
+                        Add a new task
+                    </button>
+
+                    <button class="btn btn-danger btn-lg" ng-click="clearTasks()">
+                        Clear tasks
+                    </button>
+                </div>
+
+                <div class="col-sm-6">
+                    
+                        <input class="form-control input-lg" ng-model="searchKey" placeholder="Search?" />
+                   
+                </div>
+            </div>
+        <div class="row">
+            <input class="form-control input-lg" ng-model="searchKey" placeholder="what you are seaching" ng-disabled="true"/>
+        </div>
+
+
+            <div class="row">
+                <table class="table table-striped">
+                    <tr  ng-repeat="task in tasks | filter:searchKey">
+                        <td class="col-sm-8">{{task.task}}</td>
+                        <td class="col-sm-2">{{task.date}}</td>
+                        <td class="col-sm-2">{{task.category}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div><!--the end of the $scope for UnitListController-->
+    </div>
+
+    <script src="angular.min.js"></script>  <!--why not put it in the head-->
+    <script src="tasks-test.js"></script>  <!--why not put it in the head-->
+
+    <script>
+        angular.module('Tasks', []).controller('taskListController', TaskListController);
+
+        function TaskListController($scope) {
+            //$scope.units = units
+            var index = 0; // local variable to the constractor cannot be accessed by the view
+            $scope.tasks = [];
+
+            $scope.addTask = function () {
+                if ($scope.enableAdd())
+                    $scope.tasks.push(tasks[index++])
+            };
+
+            $scope.clearTasks = function () {
+                $scope.tasks = [];
+                index = 0;
+            };
+
+            $scope.enableAdd = function () {
+                return index < tasks.length;
+            }
+
+        }
+    </script>
+</body>
+</html>
