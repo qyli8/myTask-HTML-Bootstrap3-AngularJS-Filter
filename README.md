@@ -13,4 +13,4 @@ MyTask Demo App
 ```
 #Web App snapshot
 
-![Web snapshot](https://github.com/qyli8/myTask-HTML-Bootstrap3-AngularJS-Filter/blob/master/myTaskImg/when-myTask-initiated.PNG)
+![Web snapshot](https://github.com/qyli8/myTask-HTML-Bootstrap3-AngularJS-Filter/blob/master/myTaskImg/when-maximum-length-reached.PNG)
