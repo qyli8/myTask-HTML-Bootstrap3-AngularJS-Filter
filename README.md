@@ -13,4 +13,4 @@ MyTask Demo App
 ```
 #Web App snapshot
 
-![Web snapshot](https://github.com/qyli8/nwWebsite-html-css-bootstrap/blob/master/)
+![Web snapshot](https://github.com/qyli8/nwWebsite-html-css-bootstrap/blob/master/myTaskImg/when-myTask-initiated.PNG)
